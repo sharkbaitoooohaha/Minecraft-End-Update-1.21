@@ -1,6 +1,7 @@
 package net.sharkbaitoooohaha.minecraftendupdate.datagen;
 
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Blocks;
 import net.sharkbaitoooohaha.minecraftendupdate.block.ModBlocks;
 import net.sharkbaitoooohaha.minecraftendupdate.item.ModItems;
 import net.minecraft.core.HolderLookup;
@@ -27,26 +28,44 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(ModBlocks.VOID_TORCH.get());
-        dropSelf(ModBlocks.CREEPING_SPIKE.get());
-        dropSelf(ModBlocks.CREEPING_TENDRIL.get());
-        dropSelf(ModBlocks.CREEPING_WOOD.get());
-        dropSelf(ModBlocks.CREEPING_PLANKS.get());
-        dropSelf(ModBlocks.REACHING_VINE.get());
-        dropSelf(ModBlocks.CHORUS_SAPLING.get());
-        dropSelf(ModBlocks.CHORUS_LOG.get());
-        dropSelf(ModBlocks.CHORUS_WOOD.get());
-        dropSelf(ModBlocks.CHORUS_PLANKS.get());
+        //dropSelf(ModBlocks.VOID_TORCH.get());
+        //dropOther(ModBlocks.VOID_CAMPFIRE.get(), ModBlocks.CRYSTAL_SAND.get());
+        dropOther(ModBlocks.CREEPING_ENDINE_BLOCK.get(), Blocks.END_STONE);
+        dropOther(ModBlocks.END_GRASS_BLOCK.get(), Blocks.END_STONE);
+
+        this.dropSelf(ModBlocks.CREEPING_TENDRIL.get());
+        this.dropSelf(ModBlocks.CREEPING_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_CREEPING_TENDRIL.get());
+        this.dropSelf(ModBlocks.STRIPPED_CREEPING_WOOD.get());
+        this.dropSelf(ModBlocks.CREEPING_PLANKS.get());
+        this.dropSelf(ModBlocks.CREEPING_SPIKE.get());
+
+        this.add(ModBlocks.CREEPING_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.CREEPING_SPIKE.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        //dropSelf(ModBlocks.REACHING_VINE.get());
+
+        this.dropSelf(ModBlocks.CHORUS_LOG.get());
+        this.dropSelf(ModBlocks.CHORUS_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_CHORUS_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_CHORUS_WOOD.get());
+        this.dropSelf(ModBlocks.CHORUS_PLANKS.get());
+        this.dropSelf(ModBlocks.CHORUS_SAPLING.get());
+
+        this.add(ModBlocks.CHORUS_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.CHORUS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
         dropSelf(ModBlocks.END_ROCK.get());
         dropSelf(ModBlocks.END_ROD_BLOCK.get());
-        dropSelf(ModBlocks.CHISELED_END_BRICK.get());
+        //dropSelf(ModBlocks.CHISELED_END_BRICK.get());
         dropSelf(ModBlocks.CRYSTAL_SAND.get());
         dropSelf(ModBlocks.CRYSTAL_SANDSTONE.get());
         dropSelf(ModBlocks.ENDUM_BLOCK.get());
-        dropSelf(ModBlocks.CONSTRUCTOR.get());
-        dropSelf(ModBlocks.RITUAL_TABLE.get());
+        dropSelf(ModBlocks.VOID_BLOCK.get());
+        //dropSelf(ModBlocks.CONSTRUCTOR.get());
+        //dropSelf(ModBlocks.RITUAL_TABLE.get());
         dropSelf(ModBlocks.OBSIDIAN_BRICK.get());
-        dropSelf(ModBlocks.CHISELED_OBSIDIAN_BRICK.get());
+        //dropSelf(ModBlocks.CHISELED_OBSIDIAN_BRICK.get());
 
         this.add(ModBlocks.ENDUM_ORE.get(),
                 block -> createOreDrop(ModBlocks.ENDUM_ORE.get(), ModItems.ENDUM_SHARD.get()));

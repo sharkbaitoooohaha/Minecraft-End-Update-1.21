@@ -47,7 +47,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_DRAGON.get());
         basicItem(ModItems.COOKED_DRAGON.get());
 
-        basicItem(ModItems.END_MUSIC_DISC.get());
+        basicItem(ModItems.MUSIC_DISC_END.get());
         basicItem(ModItems.DRAGON_BANNER_PATTERN.get());
 
         handheldItem(ModItems.ENDUM_SWORD);

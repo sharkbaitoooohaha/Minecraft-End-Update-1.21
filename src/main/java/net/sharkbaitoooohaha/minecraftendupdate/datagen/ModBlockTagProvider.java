@@ -23,18 +23,18 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.ENDUM_ORE.get())
                 .add(ModBlocks.END_IRON_ORE.get())
                 .add(ModBlocks.END_ROCK.get())
-                .add(ModBlocks.CHISELED_END_BRICK.get())
+                //.add(ModBlocks.CHISELED_END_BRICK.get())
                 .add(ModBlocks.CRYSTAL_SANDSTONE.get())
-                .add(ModBlocks.CONSTRUCTOR.get())
-                .add(ModBlocks.RITUAL_TABLE.get())
-                .add(ModBlocks.OBSIDIAN_BRICK.get())
-                .add(ModBlocks.CHISELED_OBSIDIAN_BRICK.get());
+                //.add(ModBlocks.CONSTRUCTOR.get())
+                //.add(ModBlocks.RITUAL_TABLE.get())
+                .add(ModBlocks.OBSIDIAN_BRICK.get());
+                //.add(ModBlocks.CHISELED_OBSIDIAN_BRICK.get());
 
-        tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.RITUAL_TABLE.get());
+        //tag(BlockTags.NEEDS_IRON_TOOL)
+                //.add(ModBlocks.RITUAL_TABLE.get());
 
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
-                .add(ModBlocks.OBSIDIAN_BRICK.get())
-                .add(ModBlocks.CHISELED_OBSIDIAN_BRICK.get());
+                .add(ModBlocks.OBSIDIAN_BRICK.get());
+                //.add(ModBlocks.CHISELED_OBSIDIAN_BRICK.get());
     }
 }

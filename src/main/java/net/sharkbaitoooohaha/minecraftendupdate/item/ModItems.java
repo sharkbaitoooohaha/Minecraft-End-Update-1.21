@@ -67,7 +67,7 @@ public class ModItems {
                 }
             });
 
-    public static final RegistryObject<Item> END_MUSIC_DISC = ITEMS.register("end_music_disc",
+    public static final RegistryObject<Item> MUSIC_DISC_END = ITEMS.register("music_disc_end",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> DRAGON_BANNER_PATTERN = ITEMS.register("dragon_banner_pattern",
             () -> new Item(new Item.Properties()));

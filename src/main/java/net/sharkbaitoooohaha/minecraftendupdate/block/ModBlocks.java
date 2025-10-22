@@ -1,18 +1,23 @@
 package net.sharkbaitoooohaha.minecraftendupdate.block;
 
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
 import net.sharkbaitoooohaha.minecraftendupdate.MinecraftEndUpdate;
+import net.sharkbaitoooohaha.minecraftendupdate.block.custom.ModFlammableRotatedPillarBlock;
 import net.sharkbaitoooohaha.minecraftendupdate.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DropExperienceBlock;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import net.sharkbaitoooohaha.minecraftendupdate.worldgen.tree.ModTreeGrowers;
 
 import java.util.function.Supplier;
 
@@ -20,62 +25,91 @@ public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, MinecraftEndUpdate.MOD_ID);
 
-    public static final RegistryObject<Block> VOID_FIRE = registerBlock("void_fire",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
-    public static final RegistryObject<Block> VOID_TORCH = registerBlock("void_torch",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> VOID_CAMPFIRE = registerBlock("void_campfire",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+    //public static final RegistryObject<Block> VOID_FIRE = registerBlock("void_fire",
+    //        () -> new FireBlock(BlockBehaviour.Properties.of()
+    //               .noLootTable()));
+    //public static final RegistryObject<Block> VOID_TORCH = registerBlock("void_torch",
+    //        () -> new TorchBlock(ParticleTypes.SOUL_FIRE_FLAME, BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_TORCH)));
+    //public static final RegistryObject<Block> VOID_CAMPFIRE = registerBlock("void_campfire",
+    //        () -> new CampfireBlock(true, 51237, BlockBehaviour.Properties.ofFullCopy(Blocks.SOUL_CAMPFIRE)));
 
-    public static final RegistryObject<Block> CREEPING_SPIKE = registerBlock("creeping_spike",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> CREEPING_TENDRIL = registerBlock("creeping_tendril",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> CREEPING_WOOD = registerBlock("creeping_wood",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+    public static final RegistryObject<RotatedPillarBlock> CREEPING_TENDRIL = registerBlock("creeping_tendril",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_STEM)));
+    public static final RegistryObject<RotatedPillarBlock> CREEPING_WOOD = registerBlock("creeping_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_HYPHAE)));
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_CREEPING_TENDRIL = registerBlock("stripped_creeping_tendril",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_WARPED_STEM)));
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_CREEPING_WOOD = registerBlock("stripped_creeping_wood",
+            () -> new RotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_WARPED_HYPHAE)));
     public static final RegistryObject<Block> CREEPING_PLANKS = registerBlock("creeping_planks",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.WARPED_PLANKS)));
     public static final RegistryObject<Block> CREEPING_LEAVES = registerBlock("creeping_leaves",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)));
+    public static final RegistryObject<Block> CREEPING_SPIKE = registerBlock("creeping_spike",
+            () -> new SaplingBlock(ModTreeGrowers.CREEP, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
+
     public static final RegistryObject<Block> CREEPING_ENDINE_BLOCK = registerBlock("creeping_endine_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> CREEPING_GRASS = registerBlock("creeping_grass",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+    //public static final RegistryObject<Block> CREEPING_GRASS = registerBlock("creeping_grass",
+    //        () -> new GrassBlock(BlockBehaviour.Properties.of()
+    //                .strength(3f).noLootTable()));
 
-    public static final RegistryObject<Block> REACHING_VINE = registerBlock("reaching_vine",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+    //public static final RegistryObject<Block> REACHING_VINE = registerBlock("reaching_vine",
+    //        () -> new BambooStalkBlock(BlockBehaviour.Properties.of()
+    //                .strength(3f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> END_GRASS_BLOCK = registerBlock("end_grass_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> END_GRASS = registerBlock("end_grass",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> CHORUS_SAPLING = registerBlock("chorus_sapling",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> CHORUS_LOG = registerBlock("chorus_log",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> CHORUS_WOOD = registerBlock("chorus_wood",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+    //public static final RegistryObject<Block> END_GRASS = registerBlock("end_grass",
+    //        () -> new GrassBlock(BlockBehaviour.Properties.of()
+    //                .strength(3f).noLootTable()));
+
+    public static final RegistryObject<RotatedPillarBlock> CHORUS_LOG = registerBlock("chorus_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LOG)));
+    public static final RegistryObject<RotatedPillarBlock> CHORUS_WOOD = registerBlock("chorus_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_WOOD)));
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_CHORUS_LOG = registerBlock("stripped_chorus_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_LOG)));
+    public static final RegistryObject<RotatedPillarBlock> STRIPPED_CHORUS_WOOD = registerBlock("stripped_chorus_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.STRIPPED_OAK_WOOD)));
     public static final RegistryObject<Block> CHORUS_PLANKS = registerBlock("chorus_planks",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+            });
     public static final RegistryObject<Block> CHORUS_LEAVES = registerBlock("chorus_leaves",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+            () -> new LeavesBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES)) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+            });
+
+    public static final RegistryObject<Block> CHORUS_SAPLING = registerBlock("chorus_sapling",
+            () -> new SaplingBlock(ModTreeGrowers.CHORUS, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING)));
 
     public static final RegistryObject<Block> END_ROCK = registerBlock("end_rock",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -83,9 +117,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> END_ROD_BLOCK = registerBlock("end_rod_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> CHISELED_END_BRICK = registerBlock("chiseled_end_bricks",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+    //public static final RegistryObject<Block> CHISELED_END_BRICK = registerBlock("chiseled_end_bricks",
+    //        () -> new Block(BlockBehaviour.Properties.of()
+    //                .strength(3f).requiresCorrectToolForDrops()));
     public static final RegistryObject<Block> END_IRON_ORE = registerBlock("end_iron_ore",
             () -> new DropExperienceBlock(UniformInt.of(3, 6), BlockBehaviour.Properties.of()
                     .strength(5f).requiresCorrectToolForDrops().sound(SoundType.DEEPSLATE)));
@@ -107,19 +141,19 @@ public class ModBlocks {
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3f).requiresCorrectToolForDrops()));
 
-    public static final RegistryObject<Block> CONSTRUCTOR = registerBlock("constructor",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> RITUAL_TABLE = registerBlock("ritual_table",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+    //public static final RegistryObject<Block> CONSTRUCTOR = registerBlock("constructor",
+    //        () -> new Block(BlockBehaviour.Properties.of()
+    //                .strength(3f).requiresCorrectToolForDrops()));
+    //public static final RegistryObject<Block> RITUAL_TABLE = registerBlock("ritual_table",
+    //        () -> new EnchantingTableBlock(BlockBehaviour.Properties.of()
+    //                .strength(3f).requiresCorrectToolForDrops()));
 
     public static final RegistryObject<Block> OBSIDIAN_BRICK = registerBlock("obsidian_brick",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(3f).requiresCorrectToolForDrops()));
-    public static final RegistryObject<Block> CHISELED_OBSIDIAN_BRICK = registerBlock("chiseled_obsidian_brick",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(3f).requiresCorrectToolForDrops()));
+    //public static final RegistryObject<Block> CHISELED_OBSIDIAN_BRICK = registerBlock("chiseled_obsidian_brick",
+    //        () -> new Block(BlockBehaviour.Properties.of()
+    //                .strength(3f).requiresCorrectToolForDrops()));
 
 
 

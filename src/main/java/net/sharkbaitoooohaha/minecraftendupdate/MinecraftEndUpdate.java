@@ -55,31 +55,31 @@ public class MinecraftEndUpdate {
             event.accept(ModBlocks.CHORUS_LOG);
             event.accept(ModBlocks.CHORUS_WOOD);
             event.accept(ModBlocks.CHORUS_PLANKS);
-            event.accept(ModBlocks.CHISELED_END_BRICK);
+            //event.accept(ModBlocks.CHISELED_END_BRICK);
             event.accept(ModBlocks.ENDUM_BLOCK);
             event.accept(ModBlocks.OBSIDIAN_BRICK);
-            event.accept(ModBlocks.CHISELED_OBSIDIAN_BRICK);
+            //event.accept(ModBlocks.CHISELED_OBSIDIAN_BRICK);
         }
 
         if(event.getTabKey() == CreativeModeTabs.FUNCTIONAL_BLOCKS) {
-            event.accept(ModBlocks.VOID_TORCH);
-            event.accept(ModBlocks.VOID_CAMPFIRE);
+            //event.accept(ModBlocks.VOID_TORCH);
+            //event.accept(ModBlocks.VOID_CAMPFIRE);
             event.accept(ModBlocks.END_ROD_BLOCK);
-            event.accept(ModBlocks.RITUAL_TABLE);
+            //event.accept(ModBlocks.RITUAL_TABLE);
         }
 
         if(event.getTabKey() == CreativeModeTabs.REDSTONE_BLOCKS) {
-            event.accept(ModBlocks.CONSTRUCTOR);
+            //event.accept(ModBlocks.CONSTRUCTOR);
         }
 
             if(event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.CREEPING_SPIKE);
             event.accept(ModBlocks.CREEPING_LEAVES);
             event.accept(ModBlocks.CREEPING_ENDINE_BLOCK);
-            event.accept(ModBlocks.CREEPING_GRASS);
-            event.accept(ModBlocks.REACHING_VINE);
+            //event.accept(ModBlocks.CREEPING_GRASS);
+            //event.accept(ModBlocks.REACHING_VINE);
             event.accept(ModBlocks.END_GRASS_BLOCK);
-            event.accept(ModBlocks.END_GRASS);
+            //event.accept(ModBlocks.END_GRASS);
             event.accept(ModBlocks.CHORUS_SAPLING);
             event.accept(ModBlocks.CHORUS_LEAVES);
             event.accept(ModBlocks.END_ROCK);
@@ -116,7 +116,7 @@ public class MinecraftEndUpdate {
             event.accept(ModItems.ENDUM);
             event.accept(ModItems.DRAGON_SCALE);
 
-            event.accept(ModItems.END_MUSIC_DISC);
+            event.accept(ModItems.MUSIC_DISC_END);
             event.accept(ModItems.DRAGON_BANNER_PATTERN);
         }
 
