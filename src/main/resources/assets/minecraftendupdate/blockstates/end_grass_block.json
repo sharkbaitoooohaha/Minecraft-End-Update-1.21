@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "minecraftendupdate:block/end_grass_block"
+    }
+  }
+}

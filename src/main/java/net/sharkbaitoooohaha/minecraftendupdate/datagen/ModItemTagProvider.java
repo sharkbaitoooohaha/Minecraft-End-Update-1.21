@@ -2,6 +2,7 @@ package net.sharkbaitoooohaha.minecraftendupdate.datagen;
 
 import net.minecraft.tags.ItemTags;
 import net.sharkbaitoooohaha.minecraftendupdate.MinecraftEndUpdate;
+import net.sharkbaitoooohaha.minecraftendupdate.block.ModBlocks;
 import net.sharkbaitoooohaha.minecraftendupdate.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -25,5 +26,15 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.DRAGON_SCALE_CHESTPLATE.get())
                 .add(ModItems.DRAGON_SCALE_LEGGINGS.get())
                 .add(ModItems.DRAGON_SCALE_BOOTS.get());
+
+        tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.CHORUS_LOG.get().asItem())
+                .add(ModBlocks.CHORUS_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_CHORUS_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_CHORUS_WOOD.get().asItem());
+
+        tag(ItemTags.PLANKS)
+                .add(ModBlocks.CREEPING_PLANKS.get().asItem())
+                .add(ModBlocks.CHORUS_PLANKS.get().asItem());
     }
 }

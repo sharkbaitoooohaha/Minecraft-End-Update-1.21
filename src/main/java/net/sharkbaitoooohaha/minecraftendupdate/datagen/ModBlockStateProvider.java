@@ -1,6 +1,7 @@
 package net.sharkbaitoooohaha.minecraftendupdate.datagen;
 
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.client.model.generators.BlockModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.sharkbaitoooohaha.minecraftendupdate.MinecraftEndUpdate;
@@ -18,10 +19,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        //blockWithItem(ModBlocks.VOID_FIRE);
-        //blockWithItem(ModBlocks.VOID_TORCH);
-        //blockWithItem(ModBlocks.VOID_CAMPFIRE);
-
         logBlock(ModBlocks.CREEPING_TENDRIL.get());
         axisBlock(ModBlocks.CREEPING_WOOD.get(), blockTexture(ModBlocks.CREEPING_TENDRIL.get()), blockTexture(ModBlocks.CREEPING_TENDRIL.get()));
         logBlock(ModBlocks.STRIPPED_CREEPING_TENDRIL.get());
@@ -36,12 +33,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         leavesBlock(ModBlocks.CREEPING_LEAVES);
         saplingBlock(ModBlocks.CREEPING_SPIKE);
-
-        blockWithItem(ModBlocks.CREEPING_ENDINE_BLOCK);
-        //blockWithItem(ModBlocks.CREEPING_GRASS);
-        //blockWithItem(ModBlocks.REACHING_VINE);
-        blockWithItem(ModBlocks.END_GRASS_BLOCK);
-        //blockWithItem(ModBlocks.END_GRASS);
 
         logBlock(ModBlocks.CHORUS_LOG.get());
         axisBlock(ModBlocks.CHORUS_WOOD.get(), blockTexture(ModBlocks.CHORUS_LOG.get()), blockTexture(ModBlocks.CHORUS_LOG.get()));
@@ -59,16 +50,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
         saplingBlock(ModBlocks.CHORUS_SAPLING);
 
         blockWithItem(ModBlocks.END_ROCK);
-        blockWithItem(ModBlocks.END_ROD_BLOCK);
-        //blockWithItem(ModBlocks.CHISELED_END_BRICK);
         blockWithItem(ModBlocks.CRYSTAL_SAND);
-        blockWithItem(ModBlocks.CRYSTAL_SANDSTONE);
-        blockWithItem(ModBlocks.VOID_BLOCK);
         blockWithItem(ModBlocks.ENDUM_BLOCK);
-        //blockWithItem(ModBlocks.CONSTRUCTOR);
-        //blockWithItem(ModBlocks.RITUAL_TABLE);
         blockWithItem(ModBlocks.OBSIDIAN_BRICK);
-        //blockWithItem(ModBlocks.CHISELED_OBSIDIAN_BRICK);
 
         blockWithItem(ModBlocks.ENDUM_ORE);
         blockWithItem(ModBlocks.END_IRON_ORE);
@@ -91,7 +75,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     }
 
     private void blockItem(RegistryObject<? extends Block> blockRegistryObject) {
-        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile("tutorialmod:block/" +
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile("minecraftendupdate:block/" +
                 ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath()));
     }
 }

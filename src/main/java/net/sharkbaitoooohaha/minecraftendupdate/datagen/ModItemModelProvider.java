@@ -1,6 +1,8 @@
 package net.sharkbaitoooohaha.minecraftendupdate.datagen;
 
+import net.minecraft.world.level.block.Block;
 import net.sharkbaitoooohaha.minecraftendupdate.MinecraftEndUpdate;
+import net.sharkbaitoooohaha.minecraftendupdate.block.ModBlocks;
 import net.sharkbaitoooohaha.minecraftendupdate.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -47,9 +49,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.RAW_DRAGON.get());
         basicItem(ModItems.COOKED_DRAGON.get());
 
-        basicItem(ModItems.MUSIC_DISC_END.get());
-        basicItem(ModItems.DRAGON_BANNER_PATTERN.get());
-
         handheldItem(ModItems.ENDUM_SWORD);
         handheldItem(ModItems.ENDUM_PICKAXE);
         handheldItem(ModItems.ENDUM_SHOVEL);
@@ -60,9 +59,18 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.DRAGON_SCALE_CHESTPLATE);
         trimmedArmorItem(ModItems.DRAGON_SCALE_LEGGINGS);
         trimmedArmorItem(ModItems.DRAGON_SCALE_BOOTS);
+
+        saplingItem(ModBlocks.CREEPING_SPIKE);
+        saplingItem(ModBlocks.CHORUS_SAPLING);
     }
 
-    // Shoutout to El_Redstoniano for making this
+    private ItemModelBuilder saplingItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(MinecraftEndUpdate.MOD_ID,"block/" + item.getId().getPath()));
+    }
+
+    // Credit to El_Redstoniano for making this
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
         final String MOD_ID = MinecraftEndUpdate.MOD_ID; // Change this to your mod id
 
@@ -113,5 +121,4 @@ public class ModItemModelProvider extends ItemModelProvider {
                 ResourceLocation.parse("item/handheld")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(MinecraftEndUpdate.MOD_ID,"item/" + item.getId().getPath()));
     }
-
 }

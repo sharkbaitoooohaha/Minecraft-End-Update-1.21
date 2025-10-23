@@ -28,8 +28,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        //dropSelf(ModBlocks.VOID_TORCH.get());
-        //dropOther(ModBlocks.VOID_CAMPFIRE.get(), ModBlocks.CRYSTAL_SAND.get());
         dropOther(ModBlocks.CREEPING_ENDINE_BLOCK.get(), Blocks.END_STONE);
         dropOther(ModBlocks.END_GRASS_BLOCK.get(), Blocks.END_STONE);
 
@@ -43,8 +41,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         this.add(ModBlocks.CREEPING_LEAVES.get(), block ->
                 createLeavesDrops(block, ModBlocks.CREEPING_SPIKE.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
-        //dropSelf(ModBlocks.REACHING_VINE.get());
-
         this.dropSelf(ModBlocks.CHORUS_LOG.get());
         this.dropSelf(ModBlocks.CHORUS_WOOD.get());
         this.dropSelf(ModBlocks.STRIPPED_CHORUS_LOG.get());
@@ -56,16 +52,11 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 createLeavesDrops(block, ModBlocks.CHORUS_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
 
         dropSelf(ModBlocks.END_ROCK.get());
-        dropSelf(ModBlocks.END_ROD_BLOCK.get());
-        //dropSelf(ModBlocks.CHISELED_END_BRICK.get());
         dropSelf(ModBlocks.CRYSTAL_SAND.get());
         dropSelf(ModBlocks.CRYSTAL_SANDSTONE.get());
         dropSelf(ModBlocks.ENDUM_BLOCK.get());
-        dropSelf(ModBlocks.VOID_BLOCK.get());
-        //dropSelf(ModBlocks.CONSTRUCTOR.get());
-        //dropSelf(ModBlocks.RITUAL_TABLE.get());
+
         dropSelf(ModBlocks.OBSIDIAN_BRICK.get());
-        //dropSelf(ModBlocks.CHISELED_OBSIDIAN_BRICK.get());
 
         this.add(ModBlocks.ENDUM_ORE.get(),
                 block -> createOreDrop(ModBlocks.ENDUM_ORE.get(), ModItems.ENDUM_SHARD.get()));
